@@ -1,0 +1,2 @@
+Para atualizar server node quando houver alteração em desenvolvimento, instalar dependencia nodemon e modificar package.json na seção "scripts", ficar igual segmento "start".
+Para trabalhar com o Body, vamos usar um pacote, o body-parser. npm install --save body-parser
