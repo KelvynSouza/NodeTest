@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
-
+const code_db = require('../../db/repository/code_repository')
 router.post("/", (req, res, next) => {
   const code ={
     langauge: req.body.lang,
     data: req.body.data
   }
+code_db.add(code.langauge);
+
   res.status(201).json({
     message: "Handling POST request of the /codes",
     code:code
