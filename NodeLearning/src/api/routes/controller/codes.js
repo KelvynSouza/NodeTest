@@ -9,12 +9,12 @@ router.post("/", (req, res, next) => {
     data: req.body.data
   }
 
-code_repository.add(code.language);
+var result = code_repository.add(code.language);
 
-  // res.status(201).json({
-  //   message: "Handling POST request of the /codes",
-  //   code:code
-  // });
+   res.status(201).json({
+     message: "Handling POST request of the /codes",
+     code:result
+   });
 });
 
 router.patch("/:codeID", (req, res, next) => {

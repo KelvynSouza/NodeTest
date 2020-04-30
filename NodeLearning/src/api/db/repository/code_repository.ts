@@ -1,18 +1,20 @@
 import { openDb } from "../database";
 
 export class CodeRepository {
-  public async add(name: any) {
+  public add(name: any) {
     let db = openDb();
-    let result = await db.run(
+    var res=db.run(
       "insert into test(name) values($name)",
       {
         $name: name,
       },
       function (err, result) {
-        
+        if(err){
+          console.log('error with insert');
+        }
+        db.close();                 
       }
     );
-    db.close();
-    return result;
+    return res;
   }
 }
